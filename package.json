@@ -1,0 +1,21 @@
+{
+  "name": "pmc-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Yomna",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "canvas": "^2.8.0",
+    "color-thief-node": "^1.0.4",
+    "discord.js": "^13.0.0-dev.918921e8211fc16e9b12d2502f3168264246ea22",
+    "fast-average-color-node": "^1.0.3",
+    "puppeteer": "^10.0.0",
+    "save": "^2.4.0",
+    "sqlite3": "^5.0.2"
+  }
+}
