@@ -43,7 +43,7 @@ bot.on('interaction', interaction => {
 // BOT PRET
 bot.on("ready", async () => {
 console.log("----------------------------------------");
-console.log("READY");
+console.log("JE SUIS PRETE MIAM");
 console.log("----------------------------------------");
 console.log();
 

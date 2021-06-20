@@ -8,18 +8,6 @@ module.exports = {
     type: "STRING",
     description: "Affiche le profile d'un joueur spécifique avec son pseudo Minecraft",
     required: false
-  }, {
-    name: "mettre-a-jour",
-    type: "STRING",
-    description: "Choisir de mettre a jour les informations",
-    required: false,
-    choices: [{
-      name: "oui",
-      value: "oui"
-    }, {
-      name: "non",
-      value: "non"
-    }]
   }],
   sample: "profile Yomna",
   accessableby: "all",
@@ -45,7 +33,6 @@ module.exports = {
     var version = "1.2";
     const db = new Sqlite3.Database("players.db"); // RÉCUPERATION DE LA BASE DE DONNÉES
     var update = false // PAR DEFAULT, LES INFO NO SERONT PAS MIS A JOUR
-    if (int.options.get("mettre-a-jour") && int.options.get("mettre-a-jour").value == "oui") update = true; // SI LA MISE A JOUR EST DEMANDÉ
     // ----------------------------------------------------------------------------------
 
     // ----------------------------------------------------------------------------------
@@ -152,7 +139,8 @@ module.exports = {
     // RÉCUPÉRATION DU PSEUDO
     console.log("> Récupération du pseudo ...");
     if (int.options.get("pseudo")) { // SI UN PSEUDO A ÉTÉ DONNÉ
-      name = int.options.get("pseudo").value; // STOCKAGE DU PSEUDO
+      name = int.options.get("pseudo").value.split(" -u")[0]; // STOCKAGE DU PSEUDO
+      if (int.options.get("pseudo").value.split(" -u").length > 1) update = true; // SI LA MISE A JOUR EST DEMANDÉ
     } else { // SI PAS DE PSEUDO
       if (int.member.nickname) { // SI LE COMPTE A ÉTÉ RENOMMÉ
         name = int.member.nickname; // RÉCUPÉRATION DU PSEUDO AVEC LE SURNOM
