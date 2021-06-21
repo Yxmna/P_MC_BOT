@@ -31,7 +31,7 @@ module.exports = {
     var theta = 30;
     var phi = 21;
     var version = "1.2";
-    const db = new Sqlite3.Database("players.db"); // RÉCUPERATION DE LA BASE DE DONNÉES
+    const db = new Sqlite3.Database("../assets/players.db"); // RÉCUPERATION DE LA BASE DE DONNÉES
     var update = false // PAR DEFAULT, LES INFO NO SERONT PAS MIS A JOUR
     // ----------------------------------------------------------------------------------
 

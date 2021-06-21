@@ -11,8 +11,8 @@ const bot = new Discord.Client({ // CREATION DU BOT
 bot.commands = new Discord.Collection(); // CREATION DE LA LISTES POUR LES FUTURE COMMANDES
 const fs = require('fs'); // FS SERT POUR MANUPILER LES FICHIERS
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')); // RECUPERATION DE TOUTES LES COMMANDES DANS LES DOSSIERS COMMANDS
-const token = require('./key.json'); // RECUPERATION DU MDP DU BOTS STOCKER DANS LE FICHIER KEY.JSON QUE TU AURA PAS LOL
-const config = require('./config.json'); // RECUPERATION DES CONFIGURATIONS
+const token = require('../assets/key.json'); // RECUPERATION DU MDP DU BOTS STOCKER DANS LE FICHIER KEY.JSON QUE TU AURA PAS LOL
+const config = require('../assets/config.json'); // RECUPERATION DES CONFIGURATIONS
 const functions = require("./functions.js"); // RECUPERATION DES FONCTIONS
 
 // ----------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ console.log("JE SUIS PRETE MIAM");
 console.log("----------------------------------------");
 console.log();
 
-  // bot.guilds.cache.get("574238344121417729").commands.set([]);
+  bot.guilds.cache.get("574238344121417729").commands.set([]);
   // ENREGISTREMENT DES 'SLASH COMMANDS' (LA JOLIE INTERFACE LORSQUE L'ONT FAIS '/')
   bot.commands.each((command) => { // POUR CHAQUE COMMANDES
     var cmd = {
