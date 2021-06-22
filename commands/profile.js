@@ -355,7 +355,7 @@ module.exports = {
       let init = names.shift().name;
       names_embed
         .setAuthor(data.name, data.discord_avatar)
-        .setDescription("```" + data.discord_topic + "```\n" + "`" + init + "` Pseudo initial\n" + names.map(element => "`" + element.name + "` Changé le " + new Date(element.changedToAt).getDate() + "/" + (new Date(element.changedToAt).getMonth() + 1) + "/" + (new Date(element.changedToAt).getFullYear()) + " il y a " + functions.readDate(new Date(element.changedToAt))).join("\n"), true)
+        .setDescription("```" + data.discord_topic + "```\n" + " • `" + init + "` Pseudo initial\n • " + names.map(element => "`" + element.name + "` Changé le " + new Date(element.changedToAt).getDate() + "/" + (new Date(element.changedToAt).getMonth() + 1) + "/" + (new Date(element.changedToAt).getFullYear()) + " il y a " + functions.readDate(new Date(element.changedToAt))).join("\n • "), true)
       // MISE A JOUR DE L'EMBED DISCORD
       if (data.discord_id) {
         discord_embed
@@ -560,7 +560,7 @@ module.exports = {
       if (!int.isMessageComponent() && int.componentType !== "BUTTON") return // SI C'EST PAS UN BOUTON, STOP
       if (int.customID !== profile_id && int.customID !== names_id && int.customID !== skin_id && int.customID !== discord_id && int.customID !== up_id && int.customID !== down_id && int.customID !== left_id && int.customID !== right_id && int.customID !== view_id && int.customID !== back_id) return; // SI C'EST UN AUTRE BOUTON, STOP
 
-      enableAllButtons(buttons.components); // ACTIVATION DE TOUT LES BOUTONS
+      functions.enableAllButtons(buttons.components); // ACTIVATION DE TOUT LES BOUTONS
       int.message.removeAttachments();
 
       if (int.customID == up_id || int.customID == down_id || int.customID == left_id || int.customID == right_id) { // SI BOUTONS DE CONTRÔLE DU SKIN
@@ -657,11 +657,6 @@ module.exports = {
         })
       }
 
-      function enableAllButtons(buttons) { // FONCTION D'ACTIVATION DE TOUT LES BOUTONS
-        buttons.forEach((button, i) => { // POUR CHAQUES BOUTONS
-          button.setDisabled(false); // ACTIVATION
-        });
-      }
     })
     // ----------------------------------------------------------------------------------
 

@@ -42,12 +42,12 @@ bot.on('interaction', interaction => {
 // ----------------------------------------------------------------------------------
 // BOT PRET
 bot.on("ready", async () => {
-console.log("----------------------------------------");
-console.log("JE SUIS PRETE MIAM");
-console.log("----------------------------------------");
-console.log();
+  console.log("----------------------------------------");
+  console.log("JE SUIS PRETE WHOWHOO");
+  console.log("----------------------------------------");
+  console.log();
 
-  bot.guilds.cache.get("574238344121417729").commands.set([]);
+  // bot.guilds.cache.get("574238344121417729").commands.set([]);
   // ENREGISTREMENT DES 'SLASH COMMANDS' (LA JOLIE INTERFACE LORSQUE L'ONT FAIS '/')
   bot.commands.each((command) => { // POUR CHAQUE COMMANDES
     var cmd = {

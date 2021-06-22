@@ -1,6 +1,13 @@
 module.exports = {
 
 
+  enableAllButtons: function(buttons) { // FONCTION D'ACTIVATION DE TOUT LES BOUTONS
+    buttons.forEach((button, i) => { // POUR CHAQUES BOUTONS
+      button.setDisabled(false); // ACTIVATION
+    });
+  },
+
+
   readDate: function(x) {
     var new_time = [];
     var text_time = [];
