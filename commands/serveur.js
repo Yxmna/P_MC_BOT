@@ -158,14 +158,14 @@ module.exports = {
       player2 = player2.slice(5, 10);
       player3 = player3.slice(10, 12);
       player3.push("[...]");
-      players_embed.addField("List des joueurs", " • " + Discord.escapeMarkdown(player1.join("\n• ")), true);
+      players_embed.addField("Liste des joueurs", " • " + Discord.escapeMarkdown(player1.join("\n• ")), true);
       players_embed.addField("_ _ ", " • " + Discord.escapeMarkdown(player2.join("\n• ")), true);
       players_embed.addField("_ _ ", " • " + Discord.escapeMarkdown(player3.join("\n• ")), true);
     } else if (data.players.online > 0) {
-      player1 = data.players.online;
-      players_embed.addField("_ _ ", " • " + Discord.escapeMarkdown(player1.join("\n• ")), true);
+      player1 = data.players.list;
+      players_embed.addField("Liste des joueurs", " • " + Discord.escapeMarkdown(player1.join("\n• ")), true);
     } else {
-      players_embed.addField("List des joueurs", "Aucun joueur 😕");
+      players_embed.addField("Liste des joueurs", "Aucun joueur 😕");
     }
     players_embed.addField("Total", data.players.online + "/" + data.players.max)
     // ----------------------------------------------------------------------------------
