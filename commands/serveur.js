@@ -107,7 +107,7 @@ module.exports = {
     if (!data.online) { // SI SERVEUR OFFLINE
       let error_embed = new Discord.MessageEmbed()
         .setColor(config.error_color).setTitle("❌ Erreur")
-        .setDescription("```Le serveur " + int.options.get("serveur").value + " est offline\n" + serveur + "```")
+        .setDescription("```Le serveur " + link.split("fr/")[1].split(".")[0] + " est offline\n" + serveur + "```")
         .setImage("https://media.discordapp.net/attachments/675387087649767426/854804575018024960/void.png")
       int.editReply({
         embeds: [error_embed]
