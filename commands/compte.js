@@ -72,6 +72,10 @@ module.exports = {
 
     name = int.options.get("pseudo").value;
 
+    console.log("----------------------------------------");
+    console.log("COMPTE par " + int.member.user.username);
+    console.log("----------------------------------------");
+
     // ----------------------------------------------------------------------------------
     // TELECHARGEMENT DES INFOS
     try { // TESTE SI COMPTE MINECRAFT EXISTE
@@ -118,9 +122,6 @@ module.exports = {
         return;
 
       }
-
-      console.log(int.user.username);
-      console.log(name);
 
       player_embed.setAuthor(discord_name + ",", int.member.user.avatarURL())
       player_embed.setTitle("`" + name + "` est bien votre compte minecraft ?")
