@@ -521,12 +521,12 @@ module.exports = {
       await page.goto("https://fr.namemc.com/profile/" + uuid);
       let profile_data = await page.evaluate(() => {
         let skin_count = document.querySelector("div.card:nth-child(3) > div:nth-child(1) > strong:nth-child(1) > a:nth-child(1)").innerHTML; // NOMBRE DE SKINS
-        let name_count = document.querySelector("div.col-md-6:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > strong:nth-child(1)").innerHTML; // NOMBRE DE PSEUDO
-        let skin_url = document.querySelector("div.card:nth-child(3) > div:nth-child(2) > a:nth-child(1)").href; // LIENS DU SKIN ACTUEL
-        let views = document.querySelector("div.col-md-6:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(2)").innerHTML.split(" /")[0]; // NOMBRE DE VUES PAR MOIS
+        let name_count = document.querySelector(".table > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1)").innerHTML; // NOMBRE DE PSEUDO
+        let skin_url = document.querySelector("div.card:nth-child(3) > div:nth-child(2) > div:nth-child(1) > a:nth-child(1)").href; // LIENS DU SKIN ACTUEL
+        let views = document.querySelector("div.row:nth-child(4) > div:nth-child(2)").innerHTML.split(" /")[0]; // NOMBRE DE VUES PAR MOIS
         let mcname = document.querySelector("h1.text-nowrap").innerHTML.split("<img")[0] // NOM MINECRAFT AVEC LES BONNE MAJ
         if (document.querySelector(".cape-2d")) { // SI UNE CAPE DÉTECTÉ
-          if (document.querySelector("div.col-md-6:nth-child(2) > div:nth-child(4) > div:nth-child(1) > strong:nth-child(1) > a:nth-child(1)")) { // SI CAPE OPTIFINE
+          if (document.querySelector(".col-md-auto > div:nth-child(4) > div:nth-child(1) > strong:nth-child(1) > a:nth-child(1)")) { // SI CAPE OPTIFINE
             var cape = 2
           } else { // SINON C'EST UNE VRAIE CAPE
             var cape = 1 // 1 = VRAI
